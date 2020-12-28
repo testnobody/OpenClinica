@@ -10,15 +10,15 @@ MAINTAINER Jens Piegsa (piegsa@gmail.com)
 ENV  OC_HOME              $CATALINA_HOME/webapps/OpenClinica
 ENV  OC_WS_HOME           $CATALINA_HOME/webapps/OpenClinica-ws
 
-ENV  OC_VERSION           3.13
+ENV  OC_VERSION           3.16
 
 COPY run.sh               /run.sh
 
 RUN  mkdir /tmp/oc && \
      cd /tmp/oc && \
 
-     wget -q --no-check-certificate -Oopenclinica.zip http://www2.openclinica.com/l/5352/2017-03-02/51xd3y && \
-     wget -q --no-check-certificate -Oopenclinica-ws.zip http://www2.openclinica.com/l/5352/2017-03-02/51xd41 && \
+     wget -q --no-check-certificate -Oopenclinica.zip https://distros.openclinica.com/OpenClinica-3.16.zip && \
+     wget -q --no-check-certificate -Oopenclinica-ws.zip https://distros.openclinica.com/OpenClinica-ws-3.16.zip && \
 
      unzip openclinica.zip && \
      unzip openclinica-ws.zip && \
